@@ -1,0 +1,201 @@
+
+body{
+   
+    font-family:"Open Sans Light", "Segoe UI Light", "Segoe UI", sans-serif;
+}
+nav{
+    background-color:#235a81;
+    color: aliceblue;
+    font-family:"Open Sans Light", "Segoe UI Light", "Segoe UI", sans-serif;
+}
+footer{
+    background-color: #eceded;
+    color:#666 ;
+    font-size:11px;
+    line-height: 1.1rem;
+    letter-spacing: normal;
+font-family:"Open Sans Light", "Segoe UI Light", "Segoe UI", sans-serif;
+    margin-bottom: 0;
+    overflow: auto;
+    
+
+
+}
+footer a{
+ text-decoration: none;
+ color: #666;
+ align-items: center;
+}
+h1,h2,h3,h4,h5, .logolink{
+    color: #377796;
+}
+.left-footer , .foot , .newsletter{
+    display: grid;
+    place-items: center;
+}
+
+footer  li{
+list-style:none;
+
+}
+
+.newsletter{
+    background-color: #5b5b5b;
+  font-size:14px;
+    line-height: 1.1rem;
+    letter-spacing: normal;
+font-family:"Open Sans Light", "Segoe UI Light", "Segoe UI", sans-serif;
+    margin-bottom: 0; 
+    margin-top: 2rem;
+
+}
+.newsletter p{
+    color: #fff;
+    font-size:1.2rem;
+    text-transform: lowercase;
+    font-weight: 100;
+}
+.subscribe{
+    background-color: #377796;
+}
+.main{
+    height:70% !important;
+    place-content: center;
+    font-size:16px;
+    line-height: 1.1rem;
+    letter-spacing:normal;
+font-family:"Open Sans Light", "Segoe UI Light", "Segoe UI", sans-serif;
+  
+}
+.log-In ,.sign-up {
+    height: 100%;
+    place-content: center;
+    display: grid;
+    background-color: #fffffc;
+}
+.top-heading{
+    text-align: center;
+    font-size: 3rem;
+    padding: 1.5rem;
+    text-transform: uppercase;
+   
+}
+
+.form-signin.log-In form , .sign-up form {
+    display: grid;
+    grid-template-rows:auto;
+    align-items: center;
+    justify-content:center;
+}
+
+.sign-container{
+    display: grid;
+    place-items:center;
+    border: rgb(238, 232, 232) solid 1px;
+    padding: 3rem;
+    border-radius: 2px;
+     box-shadow: 0px 0 6px 0px inset #8ea4b9; 
+     flex-shrink: inherit;
+     margin: 2rem;
+     box-sizing: border-box;
+
+}
+.sign-container h3{
+    padding:0 1rem 2rem 1rem;
+    font-size: 30.8px;
+}
+.sign-container form input{
+    margin: 1rem 2rem;
+    border: rgb(173, 190, 190) 1px solid;
+      border-radius: 2px;
+      padding: .2em;
+      background-color:lightgray !important   ;
+
+}
+.sign-container form input.login-button{
+   
+    background-color: #377796 !important;
+    border-radius: 2px;
+    border: rgb(228, 220, 220) 1px ;
+    padding: .4em;
+    color:#d8e5f1
+}
+.error-feedback{
+    color: #dc3545;
+    text-align: center;
+}
+.avail-feedback{
+    color: green;
+    text-align:center;
+}
+.sign-container form a {
+    font-size:12px;
+    color:#377796;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.logo{
+    font-size:2rem;
+    line-height: 0rem;
+    letter-spacing: normal;
+font-family:"Open Sans Light", "Segoe UI Light", "Segoe UI", sans-serif;
+text-decoration:overline;
+color: lightgray;
+text-align: center;
+font-weight: 700;
+font-style:italic;
+padding-left: 1rem;
+}
+.logolink{
+    font-style: italic;
+    text-decoration: overline;
+}
+.logo:hover, .logolink:hover{
+    color: rgb(185, 185, 185);
+}
+.sign-up .top-heading{
+    font-size: 1rem;
+    padding-top: 3rem;
+}
+.profile{
+    padding: 2rem 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: grid;
+
+}
+
+.tab {
+  display: inline-block;
+     font-style:normal;
+     text-decoration: none;
+     border:1px rgb(177, 174, 174) solid;
+     background-color: black;
+       color: rgb(255, 253, 246);
+    padding: 1rem;
+}
+
+.active {
+  background-color:#fff;
+  color: #000;
+}
+
+.tab-panel {
+  
+  border: 1px solid rgb(233, 215, 215);
+   padding: 1rem;
+   size: 40vh 50vw;
+    place-items: center;
+}
+
+.hidden {
+  display:none;
+}
+.tab-list{
+    display:inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+       
+}
