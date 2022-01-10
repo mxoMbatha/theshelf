@@ -6,7 +6,7 @@ require_once 'common.php'
     <title><?php echo $appname ?>: Account</title>
 </head>
  <body class="dflex flex flex-column h-100" >
-   <main class="container">
+   <main class="main container">
   <?php
   if (!$loggedin) die();
   echo "<div class='account-heading top-heading'><h3>Welcome to $appname  </h3> </div>";
