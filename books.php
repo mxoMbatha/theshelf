@@ -6,14 +6,15 @@ require_once 'common.php';
 </head>
 <body class="dflex flex flex-column h-100" >
 <main class="main">
-<h1 class="container">eLibrary</h1>
-<aside>
-<div class="flex-shrink-0 p-3 bg-white">
-<p class="d-flex align-items-centre pb-3 mb-3 border-bottom">filter</p>
-<ul class="list-unstyled ps-0">
-<li class="mb-1">
-<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
-           category
+<h1 class="">eLibrary</h1>
+<div class="booksmain">
+<aside class="bd-aside">
+   <div class="flex-shrink-0 p-3 bg-white">
+   <p class="d-flex align-items-centre mb-3 pb-3 border-bottom">Filter</p>
+   <ul class="list-unstyled ps-0">
+    <li class="mb-1">
+  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+        category
         </button>
         <div class="collapse show" id="home-collapse" style="">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -23,9 +24,13 @@ require_once 'common.php';
           </ul>
         </div>
         </li>
-</ul>
-</div>
+  </ul>
+  </div>
 </aside>
+<div class="allbooks flex-shrink-0 p-3 bg-white">
+<p class="d-flex align-items-centre mb-3 pb-3 border-bottom">All Books</p>
+</div>
+</div>
 </main>  
 <div class="p-5 newsletter">
        <div class="container">
