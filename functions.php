@@ -36,7 +36,7 @@ function showProfile($uzer){
     $result=queryMysql("SELECT uzer,firstname,lastname,dateOB,phone,email FROM uzers NATURAL JOIN uzerprofiles WHERE uzer ='$uzer'");
     if ($result->num_rows){
         $row=$result->fetch_array(MYSQLI_ASSOC);
-        echo "<div class=' profile'>".
+        echo "<div class='profile'>".
         "<div class='profile-item'>".
          "<div class='profile-item'>".
         stripslashes($row['uzer'])."</div>".

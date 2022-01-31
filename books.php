@@ -8,9 +8,9 @@ require_once 'common.php';
 <main class="main">
 <h1 class="">eLibrary</h1>
 <div class="booksmain">
-<aside class="bd-aside">
+<aside class="bd-aside border-left">
    <div class="flex-shrink-0 p-3 bg-white">
-   <p class="d-flex align-items-centre mb-3 pb-3 border-bottom">Filter</p>
+   <p class="d-flex align-items-centre mb-3 pb-3 border-bottom">|Filter|</p>
    <ul class="list-unstyled ps-0">
     <li class="mb-1">
   <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
@@ -18,9 +18,9 @@ require_once 'common.php';
         </button>
         <div class="collapse show" id="home-collapse" style="">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">Fiction</a></li>
-            <li><a href="#" class="link-dark rounded">Web Development</a></li>
-            <li><a href="#" class="link-dark rounded">biography</a></li>
+            <li><a href="#"  class="link-dark rounded" id="fiction" >Fiction</a></li>
+            <li><a href="#" id="webdevBooks" class="link-dark rounded">Web Development</a></li>
+            <li><a href="#" id="biography" class="link-dark rounded">biography</a></li>
           </ul>
         </div>
         </li>
@@ -28,7 +28,24 @@ require_once 'common.php';
   </div>
 </aside>
 <div class="allbooks flex-shrink-0 p-3 bg-white">
-<p class="d-flex align-items-centre mb-3 pb-3 border-bottom">All Books</p>
+<p class="d-flex align-items-centre mb-3 pb-3 border-bottom">
+<a href="#" id="allbooks">|All Books|</a></p>
+  <div class="display-books" id="display-books">
+      <script>
+   $('#allbooks').click(function(e){ 
+     e.preventDefault();
+     $.get('allbooks.php', function(data){
+        $('#display-books').html(data);
+      })
+    })
+    $('#webdevBooks').click(function(e){
+      e.preventDefault();
+      $.get('webdevelopment.php',function(data){
+        $('#display-books').html(data);
+      })
+    })
+      </script>
+  </div>
 </div>
 </div>
 </main>  

@@ -22,10 +22,34 @@
                  INDEX(uzer(6)),
                 INDEX(firstname(6)),
             INDEX(lastname(6))');
+    
+    createTable('books',
+                'bookId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                 isbn CHAR(13),
+                 title VARCHAR(16),
+                  edition VARCHAR(10),
+                 INDEX(title(6)),
+                 INDEX(isbn(6)),
+                 INDEX(edition(3))');
 
-                
-
+    createTable('authors',
+                 'authorId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                  isbn CHAR(13),
+                  firstname VARCHAR(16),
+                  lastname VARCHAR(16),
+                  bookId INT  ,
+                 INDEX(isbn(6)),
+                 INDEX(firstname(6))');
+   
+     createTable ('isbn',
+                  'isbn CHAR(13),
+                  firstname VARCHAR(16),
+                  lastname VARCHAR(16),
+                  bookId INT  ,
+                  authorId INT,
+                  INDEX(isbn(6))');      
     ?>
+
 </head>
 <body>
     
