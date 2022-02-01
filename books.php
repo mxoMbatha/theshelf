@@ -5,14 +5,24 @@ require_once 'common.php';
 <title><?php $appname ?>:Books</title>
 </head>
 <body class="dflex flex flex-column h-100" >
-<main class="main">
-<h1 class="">eLibrary</h1>
+<main class="allbooks-main">
+<h1 style="text-align:center">eLibrary</h1>
 <div class="booksmain">
-<aside class="bd-aside border-left">
-   <div class="flex-shrink-0 p-3 bg-white">
+<aside class="bd-aside border-left" ">
+   <div class="flex-shrink-0 p-3 ">
    <p class="d-flex align-items-centre mb-3 pb-3 border-bottom">|Filter|</p>
    <ul class="list-unstyled ps-0">
-    <li class="mb-1">
+     <li class="mb-1">
+     <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+         New
+        </button>
+        <div class="collapse show" id="home-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+        <li><a href="#" class="link-dark rounded" id="newBooks">All New Books</a></li>
+        </ul>
+        </div>
+      </li>
+  <li class="mb-1">  
   <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
         category
         </button>
@@ -23,13 +33,14 @@ require_once 'common.php';
             <li><a href="#" id="biography" class="link-dark rounded">biography</a></li>
           </ul>
         </div>
-        </li>
+      </li>
+      
   </ul>
   </div>
 </aside>
 <div class="allbooks flex-shrink-0 p-3 bg-white">
 <p class="d-flex align-items-centre mb-3 pb-3 border-bottom">
-<a href="#" id="allbooks">|All Books|</a></p>
+<a href="#" id="allbooks" class="link-dark rounded text-decoration-none" >|All Books|</a></p>
   <div class="display-books" id="display-books">
       <script>
    $('#allbooks').click(function(e){ 
@@ -41,6 +52,12 @@ require_once 'common.php';
     $('#webdevBooks').click(function(e){
       e.preventDefault();
       $.get('webdevelopment.php',function(data){
+        $('#display-books').html(data);
+      })
+    })
+    $('#fiction').click(function(e){
+      e.preventDefault();
+      $.get('fiction.php',function(data){
         $('#display-books').html(data);
       })
     })
