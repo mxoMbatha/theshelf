@@ -11,6 +11,6 @@ echo "<p>";echo stripslashes( $data['title']);echo"</p>";
 echo "<p>";echo stripslashes($data['edision']);echo"</p>";
 echo "<p>";echo stripslashes($data['firstname'])." ". stripslashes($data['lastname']);echo"</p>";
 echo "<p>";echo stripslashes( $data['category']);echo"</p>";
-echo "<p>";echo stripslashes($data['released']);echo"</p>";
+echo "<p>";echo stripslashes($data['released']);echo"</p>"."<div class='cart-buttons'> <a href='#' class='cart-button display-none'> cart</a>"."<a href='#' class='cart-button'> preview</a></div>";
 }
 ?>

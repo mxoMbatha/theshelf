@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 echo <<<_END
 <!DOCTYPE html>
 <html lang="en" class="h-100">
@@ -12,17 +12,7 @@ echo <<<_END
       <script src='jquery-3.6.0.min.js'></script>
 </head>
 _END;
-require_once 'functions.php';
-$userString='Account';
-if (isset($_SESSION['uzer']))
-{
-    $uzer =$_SESSION['uzer'];
-    $loggedin=TRUE;
-    $userString=$uzer;
-
-}
-else $loggedin=FALSE;
-
+require_once 'sessions.php';
 if($loggedin)
 echo <<<_END
 <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark">
@@ -37,7 +27,7 @@ echo <<<_END
  <div class="collapse navbar-collapse justify-content-center" id="navmenu">
  <ul class="navbar-nav">
      <li class="nav-item">
-     <a class="nav-link" href="#library">library</a>
+     <a class="nav-link" href="books.php">library</a>
       </li>
      <li class="nav-item">
      <a class="nav-link" href="#Shop">shop</a></li>
@@ -46,9 +36,12 @@ echo <<<_END
      <li class="nav-item">
      <a class="nav-link" href="account.php">$userString</a>
      </li>
+      <li class="nav-item">
+     <a class="nav-link" href="logout.php">logout</a>
+     </li>
+    
  </ul>
 </div>
- 
     </div>
   </nav>
  
@@ -67,14 +60,17 @@ echo <<<_END
  <div class="collapse navbar-collapse justify-content-center" id="navmenu">
  <ul class="navbar-nav">
      <li class="nav-item">
-     <a class="nav-link" href="#library">library</a>
+     <a class="nav-link" href="books.php">elibrary</a>
       </li>
      <li class="nav-item">
      <a class="nav-link" href="#Shop">shop</a></li>
      <li class="nav-item"> 
      <a class="nav-link" href="#community">community</a></li>
      <li class="nav-item">
-     <a class="nav-link" href="account.php">Account</a>
+     <a class="nav-link" href="signUp.php">create account</a>
+     </li>
+      <li class="nav-item">
+     <a class="nav-link" href="login.php">login</a>
      </li>
  </ul>
 </div>

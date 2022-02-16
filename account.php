@@ -8,7 +8,16 @@ require_once 'common.php'
  <body class="dflex flex flex-column h-100" >
    <main class="main container">
   <?php
-  if (!$loggedin) die();
+  if (!$loggedin) die(
+    "<div id='letIn'>
+      <script>
+        $.get('login.php', function (data) {
+        $('#letIn').html(data);
+    })
+    $('#letIn').fadeTo('slow');
+      </script>
+      </div>"
+  );
   echo "<div class='account-heading top-heading'><h3>Welcome to $appname  </h3> </div>";
 
 $result=queryMysql("SELECT * FROM uzerprofiles WHERE uzer='$uzer'");

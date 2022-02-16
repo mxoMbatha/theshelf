@@ -117,7 +117,23 @@ font-family:"Open Sans Light", "Segoe UI Light", "Segoe UI", sans-serif;
     border-radius: 2px;
     border: rgb(228, 220, 220) 1px ;
     padding: .4em;
-    color:#d8e5f1
+    color:#d8e5f1;
+     transition: 300ms;
+}
+.sign-container form a.link-up{   
+    background-color: #377796 !important;
+    border-radius: 2px;
+    border: rgb(228, 220, 220) 1px ;
+    padding: .4em;
+    color:#d8e5f1;
+    text-decoration: none;
+    margin-top: 1rem;
+     transition: 500ms;
+}
+.sign-container form a.link-up:hover,.sign-container form input.login-button:hover{
+    font-size: 14px;
+    font-weight: 600;
+   
 }
 .error-feedback{
     color: #dc3545;
@@ -127,13 +143,19 @@ font-family:"Open Sans Light", "Segoe UI Light", "Segoe UI", sans-serif;
     color: green;
     text-align:center;
 }
-.sign-container form a {
+.sign-container form a{
     font-size:12px;
     color:#377796;
     text-align: center;
-    padding-top: 1rem;
+    margin-top: 0;
 }
-
+.sign-container form p{
+    font-size:16px;
+    color:#377796;
+}
+.sides{
+    padding: 0 8px;
+}
 .logo{
     font-size:2rem;
     line-height: 0rem;
@@ -305,3 +327,67 @@ margin-top: 1rem;
 .picture{
     margin-bottom: .5rem;
 }
+.cart-button{
+    text-decoration: none;
+    border: white solid 1px;
+    padding: 1rem;
+    text-align: center;
+    border-radius:2px;
+    background-color: #377796;
+    color: #d8e5f1;
+    border: solid 1px #f6fafa;
+
+    
+}
+.cart-buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: flex-start
+}
+.display-none{
+    background-color:transparent;
+    color: transparent;
+    border: solid 1px #f6fafa;
+}
+.display-none:hover,.cart-button:hover,.search-button:hover,#allbooks:hover{
+    color: #377796;
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 1rem;
+    
+}
+#search{
+    border: 1px solid #666;
+    width: 50%;
+    border-radius: 2px;
+    padding:  2px 4px 2px;
+    text-align: center;
+    background:transparent;
+    outline: none;
+    opacity: 0.7;
+    color:#666;
+    transition: 0.5s;
+}
+#search:focus{
+    width: 65%;
+}
+.with-search{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+ .search-button{
+    text-decoration: none;
+    border:#377796 solid 1px;
+    padding: 2px 4px 2px;
+    text-align: center;
+    border-radius:3px;
+    background-color: #377796;
+    color: #d8e5f1;
+    margin-left: 3px;
+
+    
+    }
+    #borders{
+    padding:0 1rem;
+    }
+    

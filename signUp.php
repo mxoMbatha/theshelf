@@ -1,8 +1,15 @@
- <?php
-require_once 'common.php';
-?>
+<!DOCTYPE html>
+<html lang="en" class="h-100">
 <head>
-    
+ <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="styles.css">
+      <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+      <script src='jquery-3.6.0.min.js'></script>
+      <?php
+require_once 'sessions.php';
+?>  
     <title><?php echo $appname ?>:Sign Up</title>
   
 </head>
@@ -25,7 +32,21 @@ else {
     $error="<p class='error-feedback'>username already exist</p> <br>";
 
 else{
-      queryMysql("INSERT INTO uzers VALUES('$uzer','$email','$pass')");die("<div><h4>Account created </h4> <br></div>")
+      queryMysql("INSERT INTO uzers VALUES('$uzer','$email','$pass')");die
+      ("<div><h3 class=top-heading >Welcome to $appname </h3>
+       <h5>your account is succesfully created <a href='#' id='sign-again'> click here to sign in<a/> </h5>  <br>
+      </div>
+      <div id='letIn'>
+      <script>
+     $('#sign-again').click(function (e) {
+    e.preventDefault();
+    $.get('login.php', function (data) {
+        $('#letIn').html(data);
+    })
+    $('#letIn').fadeTo('slow');
+})
+      </script>
+      </div>")
       ;
      }
   }
@@ -52,20 +73,8 @@ _END
   <form action="" method="post"></form>
 
 
-
 </div>
 </main>  
-<div class="p-5 newsletter">
-       <div class="container">
-           <div class="d-md-flex justify-content-betwen align-items-center">
-            <p class="mb-3 mb-md-0">Subscribe to our newsletter</p>
-            <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Enter email">
-          <button class="btn btn-lg btn-dark subscribe" id="#subscribe" type="submit">Send Email</button>
-        </div>
-            </div>
-           </div>
-</div>
 
 <footer class=" py-3 p-5 position-relative" >
 <div class="container-xl">
@@ -113,6 +122,7 @@ _END
 
 
 <script src="main.js"></script>
+<script src="/js/query.js"></script>
 </body>
 </html>
 

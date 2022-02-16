@@ -103,3 +103,4 @@ document.addEventListener('click', ({ target: { dataset: { id = '' } } }) => {
     })
   })()
   
+  $

@@ -1,12 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<title>Effects: hide & show</title>
+<script src='jquery-3.6.0.min.js'></script>
 </head>
 <body>
-    live life to the 
+<button id='hide'>Hide</button>
+<button id='show'>Show</button>
+<p id='text'>Click the Hide and Show buttons</p>
+<script>
+$('#hide').click(function() { $('#text').hide('slow', 'linear') })
+$('#show').click(function() { $('#text').show('slow', 'linear') })
+</script>
+<button id='slideup'>slideUp</button>
+<button id='slidedown'>slideDown</button>
+<button id='slidetoggle'>slideToggle</button>
+<div id='para' style='background:#def'>
+<h2>From A Tale of Two Cities - By Charles Dickens</h2>
+<p>It was the best of times, it was the worst of times, it was the age of
+wisdom, it was the age of foolishness, it was the epoch of belief, it was
+the epoch of incredulity, it was the season of Light, it was the season of
+Darkness, it was the spring of hope, it was the winter of despair, we had
+everything before us, we had nothing before us, we were all going direct to
+Heaven, we were all going direct the other way - in short, the period was so
+far like the present period, that some of its noisiest authorities insisted
+on its being received, for good or for evil, in the superlative degree of
+comparison only</p>
+</div>
+<script>
+$('#slideup') .click(function() { $('#para').slideUp( 'slow') })
+$('#slidedown') .click(function() { $('#para').slideDown( 'slow') })
+$('#slidetoggle').click(function() { $('#para').slideToggle('slow') })
+</script>
+<button id='fadeout'>fadeOut</button>
+<button id='fadein'>fadeIn</button>
+<button id='fadetoggle'>fadeToggle</button>
+<button id='fadeto'>fadeTo</button>
+<p id='texts'>Click the buttons above</p>
+<script>
+$('#fadeout') .click(function() { $('#texts').fadeOut( 'slow' ) })
+$('#fadein') .click(function() { $('#texts').fadeIn( 'slow' ) })
+$('#fadetoggle').click(function() { $('#texts').fadeToggle('slow' ) })
+$('#fadeto') .click(function() { $('#texts').fadeTo( 'slow', 0.5) })
+</script>
 </body>
 </html>
