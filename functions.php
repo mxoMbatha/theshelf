@@ -63,14 +63,14 @@ echo "<p>";echo stripslashes( $data['title']);echo"</p>";
 echo "<p>";echo stripslashes($data['edision']);echo"</p>";
 echo "<p>";echo stripslashes($data['firstname'])." ". stripslashes($data['lastname']);echo"</p>";
 echo "<p>";echo stripslashes( $data['category']);echo"</p>";
-echo "<p>";echo stripslashes($data['released']);echo"</p>"."<div class='cart-buttons'> <a href='#' class='cart-button display-none'> cart</a>"."<a href='#' class='cart-button'> preview</a></div>";
+echo "<p>";echo stripslashes($data['released']);echo"</p>"."<div class='cart-buttons'> <a href='#' class='cart-button display-none'> cart</a>"."<a href='#' class='cart-button'> preview</a></div></div>";
 }
 }
 // logout
 function logOut(){
     if (isset($_SESSION['uzer'])){
         destroySession();
-        echo " <div class='top-heading'>You have been logged out. Please " .
+        echo "You have been logged out. Please " .
 "<a href='index.php'>click here</a> to refresh the screen.";
 }
 else 

@@ -1,7 +1,7 @@
 <?php
 require_once 'functions.php';
-
-$result=queryMysql("SELECT isbn,title,category,edision,released,deskription,picture,firstname,lastname FROM books NATURAL JOIN authors WHERE books.category='web development'");
+$web='web development';
+$result=queryMysql("SELECT isbn,title,category,edision,released,deskription,picture,firstname,lastname FROM books NATURAL JOIN authors WHERE books.category='$web'");
 
 while ($data=mysqli_fetch_array($result)) {
         echo "<div class='kards'>".

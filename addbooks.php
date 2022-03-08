@@ -22,12 +22,13 @@ if(isset($_POST['submit'])){
     }
 }
 ?>
-<div class="main">
-<div class="semi-borderz">
-<div class="sign-container">
-             <h2>INSERT BOOK</h2>
-<form method="post" enctype="multipart/form-data" >         
-<pre class="borderz"> 
+<div class="">
+<div class="">
+             <h2 class="text-align-center">INSERT BOOK</h2>
+             <div class="borderz">
+
+                <form method="post" enctype="multipart/form-data" >
+          
     <div class="sectionA">
             <input type="text" name="title" placeholder="title">
             <input type="text" name="edition" placeholder="edition">
@@ -37,7 +38,7 @@ if(isset($_POST['submit'])){
         </div>
         <div class="sectionB">
 
-            <textarea name="description" id="description"  cols="20" rows="10" placeholder="description"></textarea>
+            <textarea name="description" id="description"  cols="20" rows="6" placeholder="description"></textarea>
           <!-- <select name="category" id="category">
            <option disabled selected>select category
           </option> -->
@@ -52,32 +53,50 @@ if(isset($_POST['submit'])){
   <input type="file" name="picture" Required>
                       <input type="submit" id="submit" value="INSERT" name="submit">
                       </div>
-</pre>
-</div>
-  <div class="container books-container">
+                      </div>
+ </div>
+<div class="">
 <div class="Allbooks">
-    <h3>ALL BOOKS</h3>
-    <table>
+    <h3 class="text-align-center">ALL BOOKS</h3>
+    <table class="myTable">
         <thead>
             <tr>
-            <th>id</td>
-            <th>isbn</td>
-            <th>title</td>
-            <th>edition</td>
-            <th>realesed</td>
-            <th>category</td>
-            <th>image</td>
+            <th>id</th>
+            <th>isbn</th>
+            <th>title</th>
+            <th>category</th>
+            <th>edition</th>
+            <th>realesed</th>
+            <th>desc</th>
+            <th>image</th>
             </tr>
+
         </thead>
         <tbody>
-            <tr>
+               <?php
+            $result=queryMysql("SELECT bookId,isbn,title,category,edision,released,deskription,picture FROM books");
 
-            </tr>
+            while($data=mysqli_fetch_array($result)){
+            echo
+            " <tr class='table-data'>". "<td>".$data['bookId']."</td>";
+            echo"<td>".stripslashes($data['isbn']) ."</td>";
+            echo "<td>".stripslashes($data['title'])."</td>";
+            echo "<td>".stripslashes($data['edision'])."</td>";
+            echo "<td>".stripslashes($data['category'])."</td>";
+            echo "<td>".stripslashes($data['released'])."</td>"
+            ;echo "<td>".stripslashes($data['deskription'])."</td>";
+            echo "<td>"."<img class='picture'src='";
+            echo $data['picture'];
+            echo "' width='50' height='60'>";
+            echo "</td>"." </tr>"."<br>";
+            }
+            ?>
+           
         </tbody>
     </table>
 </div>
 </div>
 </div>
-</div>
+<script src="dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

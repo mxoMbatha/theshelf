@@ -43,39 +43,14 @@ require_once 'common.php';
   <p class="d-flex align-items-centre mb-3 pb-3 border-bottom">
     | <a href="#" id="allbooks" class="link-dark rounded text-decoration-none" >All Books</a> |
   </p>
-  <p class="d-flex align-items-centre mb-3 pb-3 border-bottom " id="borders">|
-  <input type="text" placeholder="filter by search" id="search" name="search" autocomplete="on">
-  <input type="submit" value="search" class="search-button">|
-  </p>
+  <div class="d-flex align-items-centre mb-3 pb-3 border-bottom " id="borders">|<form action="#" method="post">
+  <input type="text" placeholder="filter by search" onkeyup="titleSearch(this)" id="search" name="search" autocomplete="on">
+  <input type="submit" value="search" class="search-button" id="sea-btn">|
+</form></div>
 </div>
   <div class="display-books" id="display-books">
-      <script>
-        function slidingDown(){    
-          $('#display-books').slideDown('slow')
-        }
-   $('#allbooks').click(function(e){ 
-     e.preventDefault();
-     $.get('allbooks.php', function(data){
-        $('#display-books').html(data);
-      })
-       $('#display-books').fadeToggle('slow' )
-    })
-    $('#webdevBooks').click(function(e){
-      e.preventDefault();
-      $.get('webdevelopment.php',function(data){
-        $('#display-books').html(data);
-      })
-      slidingDown();
-    })
-    $('#fiction').click(function(e){
-      e.preventDefault();
-      $.get('fiction.php',function(data){
-        $('#display-books').html(data);
-      })
-    slidingDown();
-    })
-      </script>
-  </div>
+    <?php getBooks();?>
+     </div>
 </div>
 </div>
 </main>  
@@ -134,7 +109,7 @@ require_once 'common.php';
 </footer>
 <script src="dist/js/bootstrap.bundle.min.js"></script>
 <script src="main.js"></script>
-<script src="/js/query.js"></script>
+<script src="query.js"></script>
 <script src="jquery-3.6.0.min.js"></script>
  </body>
  </html>

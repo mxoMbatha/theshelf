@@ -1,4 +1,5 @@
-function checkUser(uzer) {
+function checkUser(uzer)
+{
     if (uzer.value == '') {
         O('feedback').innerHTML = ''
         return
@@ -14,7 +15,8 @@ function checkUser(uzer) {
     request.setRequestHeader("Connection", "close")
 
 
-    request.onreadystatechange = function () {
+    request.onreadystatechange = function ()
+    {
         if (this.readyState == 4)
             if (this.status == 200)
                 if (this.responseText != null)
@@ -23,7 +25,8 @@ function checkUser(uzer) {
     }
     request.send(params)
 }
-function ajaxRequest() {
+function ajaxRequest()
+{
     try {
         var request = new XMLHttpRequest()
     }
@@ -42,21 +45,24 @@ function ajaxRequest() {
     }
     return request
 }
+// footer date
+let today = new Date();
+O('yearnow').innerHTML = today.getFullYear()
 
-let today=new Date();
-O('yearnow').innerHTML=today.getFullYear()
-
-
-function O(obj) {
+// OSC functions snippet- DOM easy excess ID,STYLE,CLASS 
+function O(obj)
+{
     if (typeof obj == 'object')
         return obj
     else return document.getElementById(obj);
 }
-function S(obj) {
+function S(obj)
+{
     return O(obj).style
 }
-function C(name) {
-    let elements = document.getElementsByTagName('*')
+function C(name)
+{
+    let elements = document.getElementsByClassName('*')
     let objects = []
     for (let i = 0; i < elements.length; ++i)
         if (elements[i].classname == name)
@@ -65,8 +71,40 @@ function C(name) {
     return objects
 
 }
+O('sea-btn').addEventListener('click', (e) =>
+{
+    e.preventDefault();
+})
+function titleSearch(search)
+{
+    if (search.value == "") {
+        O('display-books').innerHTML = "";
+        return;
+    }
 
-const tabClick = ({ target }) => {
+    params = "search=" + search.value;
+    request = new ajaxRequest()
+    request.open("POST", "find.php", true)
+    request.setRequestHeader("Content-type",
+        "application/x-www-form-urlencoded")
+    request.setRequestHeader("Content-length", params.length)
+    request.setRequestHeader("Connection", "close")
+
+
+    request.onreadystatechange = function ()
+    {
+        if (this.readyState == 4)
+            if (this.status == 200)
+                if (this.responseText != null)
+                    O('display-books').innerHTML = this.responseText;
+
+    }
+    request.send(params)
+};
+
+
+const tabClick = ({ target }) =>
+{
     const { dataset: { id = '' } } = target;
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     target.classList.add('active');
@@ -74,19 +112,23 @@ const tabClick = ({ target }) => {
     document.querySelector(`#${id}`).classList.remove('hidden');
 };
 
-const bindTabs = () => {
-    document.querySelectorAll('.tab').forEach(tab => {
+const bindTabs = () =>
+{
+    document.querySelectorAll('.tab').forEach(tab =>
+    {
         tab.addEventListener('click', tabClick);
     })
 };
 
 // Belts and braces, lets ensure our DOM is loaded and only assign click to the `tabs`
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () =>
+{
     bindTabs();
 });
 
 
-document.addEventListener('click', ({ target: { dataset: { id = '' } } }) => {
+document.addEventListener('click', ({ target: { dataset: { id = '' } } }) =>
+{
     if (id.length > 0) {
         document.querySelectorAll('.tap').forEach(t => t.classList.add('hidden'));
         document.querySelector(`#${id}`).classList.remove('hidden');
@@ -95,12 +137,13 @@ document.addEventListener('click', ({ target: { dataset: { id = '' } } }) => {
 
 
 /* global bootstrap: false */
-(function () {
+(function ()
+{
     'use strict'
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    tooltipTriggerList.forEach(function (tooltipTriggerEl) {
-      new bootstrap.Tooltip(tooltipTriggerEl)
+    tooltipTriggerList.forEach(function (tooltipTriggerEl)
+    {
+        new bootstrap.Tooltip(tooltipTriggerEl)
     })
-  })()
-  
-  $
+})()
+

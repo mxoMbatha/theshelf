@@ -7,7 +7,7 @@ echo <<<_END
  <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="styles.css">
+      <link  href="styles.css " rel="stylesheet">
       <link href="dist/css/bootstrap.min.css" rel="stylesheet">
       <script src='jquery-3.6.0.min.js'></script>
 </head>
@@ -55,8 +55,6 @@ echo <<<_END
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
-
  <div class="collapse navbar-collapse justify-content-center" id="navmenu">
  <ul class="navbar-nav">
      <li class="nav-item">
@@ -65,15 +63,19 @@ echo <<<_END
      <li class="nav-item">
      <a class="nav-link" href="#Shop">shop</a></li>
      <li class="nav-item"> 
-     <a class="nav-link" href="#community">community</a></li>
+     <a class="nav-link" href="#community">community</a></li> 
+     </ul>
+     </div>
+     <div class="collapse collapse navbar-collapse right-content" id="navmenu">
+     <ul class="navbar-nav">
      <li class="nav-item">
-     <a class="nav-link" href="signUp.php">create account</a>
+     <a class="nav-link" href="signUp.php">signup</a>
      </li>
       <li class="nav-item">
      <a class="nav-link" href="login.php">login</a>
      </li>
- </ul>
-</div>
+     </ul>
+
  
     </div>
   </nav>

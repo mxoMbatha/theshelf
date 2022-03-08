@@ -292,13 +292,11 @@ padding-left: 1rem;
       /* place-content: center; */
 }
 .borderz{
-
     padding:2rem;
-    display: flex;
 
 }
 .borderz div{
-    display: grid;
+    display:grid;
     
 
 }
@@ -313,7 +311,6 @@ padding-left: 1rem;
     line-height: 1.1rem;
     letter-spacing:normal;
     font-family:"Open Sans Light", "Segoe UI Light", "Segoe UI", sans-serif;
-
 }
 .display-books{
     display: flex;
@@ -356,6 +353,9 @@ margin-top: 1rem;
     font-size: 1rem;
     
 }
+#form-search{
+    width: 50%;
+}
 #search{
     border: 1px solid #666;
     width: 50%;
@@ -373,7 +373,7 @@ margin-top: 1rem;
 }
 .with-search{
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 4fr 2fr;
 }
  .search-button{
     text-decoration: none;
@@ -390,4 +390,26 @@ margin-top: 1rem;
     #borders{
     padding:0 1rem;
     }
-    
+    .right-content{
+        justify-content: right;
+    }
+    .Allbooks{
+     display: grid;
+     justify-content: center;
+    }
+    .myTable{
+        border: 1px solid #b4c4cc;
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }
+    .text-align-center{
+        text-align: center;
+    }
+
+    .table-data td{
+        border: #b4c4cc 1px solid;
+        padding: .5rem;
+    }
+    .Allbooks th{
+        border: #b4c4cc 1px solid;
+    }

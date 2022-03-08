@@ -60,7 +60,7 @@ echo <<<_END
 <form action="signUP.php" method="post">
 <input placeholder="Username" type="text" maxlegnth="16" name="uzer" value="$uzer"onBlur="checkUser(this)">
 <span id="feedback"></span>
-<input type="text" maxlegnth="16" placeholder="Email"name="email" value="$email">
+<input type="text" maxlegnth="16" placeholder="Email" name="email" value="$email">
 <input type="password" maxlegnth='16' name="pass" value="$pass" placeholder="Password">
 <input class="login-button" type="submit" name="sigup" value="Sign Up" >
 </form>
@@ -122,7 +122,7 @@ _END
 
 
 <script src="main.js"></script>
-<script src="/js/query.js"></script>
+<script src="query.js"></script>
 </body>
 </html>
 
