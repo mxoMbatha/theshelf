@@ -358,7 +358,7 @@ margin-top: 1rem;
 }
 #search{
     border: 1px solid #666;
-    width: 50%;
+    width: 80%;
     border-radius: 2px;
     padding:  2px 4px 2px;
     text-align: center;
@@ -369,11 +369,11 @@ margin-top: 1rem;
     transition: 0.5s;
 }
 #search:focus{
-    width: 65%;
+    width: 95%;
 }
 .with-search{
     display: grid;
-    grid-template-columns: 4fr 2fr;
+    grid-template-columns: 4fr 1fr;
 }
  .search-button{
     text-decoration: none;

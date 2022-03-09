@@ -52,7 +52,7 @@ function showProfile($uzer){
     }
 }
 function getBooks(){
-    $result=queryMysql("SELECT isbn,title,category,edision,released,deskription,picture,firstname,lastname FROM books NATURAL JOIN authors WHERE authors.bookId=bookId ");
+    $result=queryMysql("SELECT bookId,isbn,title,category,edision,released,deskription,picture,firstname,lastname FROM books NATURAL JOIN authors WHERE authors.bookId=bookId ");
 
 while($data=mysqli_fetch_array($result)){
     echo "
@@ -63,7 +63,7 @@ echo "<p>";echo stripslashes( $data['title']);echo"</p>";
 echo "<p>";echo stripslashes($data['edision']);echo"</p>";
 echo "<p>";echo stripslashes($data['firstname'])." ". stripslashes($data['lastname']);echo"</p>";
 echo "<p>";echo stripslashes( $data['category']);echo"</p>";
-echo "<p>";echo stripslashes($data['released']);echo"</p>"."<div class='cart-buttons'> <a href='#' class='cart-button display-none'> cart</a>"."<a href='#' class='cart-button'> preview</a></div></div>";
+echo "<p>";echo stripslashes($data['released']);echo"</p>"."<div class='cart-buttons'> <a href='#' class='cart-button display-none'> cart</a>"."<a href='bookdetails.php?"."id=";echo stripslashes($data['bookId']);echo"'class='cart-button'> preview</a></div></div>";
 }
 }
 // logout

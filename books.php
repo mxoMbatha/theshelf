@@ -44,8 +44,7 @@ require_once 'common.php';
     | <a href="#" id="allbooks" class="link-dark rounded text-decoration-none" >All Books</a> |
   </p>
   <div class="d-flex align-items-centre mb-3 pb-3 border-bottom " id="borders">|<form action="#" method="post">
-  <input type="text" placeholder="filter by search" onkeyup="titleSearch(this)" id="search" name="search" autocomplete="on">
-  <input type="submit" value="search" class="search-button" id="sea-btn">|
+  <input type="text" placeholder="search" onkeyup="titleSearch(this)" id="search" name="search" autocomplete="on">|
 </form></div>
 </div>
   <div class="display-books" id="display-books">
