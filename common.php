@@ -9,7 +9,9 @@ echo <<<_END
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link  href="styles.css " rel="stylesheet">
       <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-      <script src='jquery-3.6.0.min.js'></script>
+      <script src='jquery-3.6.0.min.js'>
+      </script>
+      <script src="jquery.nicescroll.js"></script>
 </head>
 _END;
 require_once 'sessions.php';
