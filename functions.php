@@ -57,7 +57,7 @@ function getBooks(){
 while($data=mysqli_fetch_array($result)){
     echo "
 <div class='kards'>".
-"<img class='picture'src='";
+"<img class='picture' src='";
 echo $data['picture']; echo "' width='90' height='120'>";
 echo "<p>";echo stripslashes( $data['title']);echo"</p>";
 echo "<p>";echo stripslashes($data['edision']);echo"</p>";
@@ -65,6 +65,36 @@ echo "<p>";echo stripslashes($data['firstname'])." ". stripslashes($data['lastna
 echo "<p>";echo stripslashes( $data['category']);echo"</p>";
 echo "<p>";echo stripslashes($data['released']);echo"</p>"."<div class='cart-buttons'> <a href='#' class='cart-button display-none'> cart</a>"."<a href='bookdetails.php?"."id=";echo stripslashes($data['bookId']);echo"'class='cart-button'> preview</a></div></div>";
 }
+}
+function carouselBooks(){
+    $result=queryMysql(" SELECT bookId,title,edision,picture,firstname,lastname FROM books NATURAL JOIN authors  WHERE authors.bookId=bookId");
+    while($data=mysqli_fetch_array($result)){
+        echo"
+        <div class='owl-item'>
+                    <div class='product-item'>
+                        <div class='pi-pic'>".
+                            
+                             "<img class='picture' src='";
+                              echo $data['picture'];
+                             echo "' width='262' height='408'>";
+                             echo "<div class='pi-links'>
+                             <a href='bookdetails.php?"."id=";
+                             echo stripslashes($data['bookId']);
+                             echo "class='add-card'>
+                             <i class='flaticon-bag'></i>
+                             <span>add to cart</span> </a>
+                            </div>
+                        </div>
+                        <div class='pix-text'>
+                            <h6>";echo stripslashes($data['firstname'])." ". stripslashes($data['lastname']);echo"</h6>"
+                            ."<p>";echo stripslashes( $data['title']);echo"</p>" ;
+                            
+                        echo "
+                        </div>
+                    </div>
+                </div>
+        ";
+    }
 }
 // logout
 function logOut(){
@@ -79,6 +109,7 @@ echo "
 <div class='main'><br>" .
 "You cannot log out because you are not logged in";
 }
+
 
 function displayModal(){
     echo <<<_END

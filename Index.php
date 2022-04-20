@@ -3,6 +3,7 @@ require_once 'common.php'
 ?>
 <head>
     <title><?php echo $appname ?>: Home</title>
+    <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
 </head>
  <body>
      <section id="showcases">
@@ -12,6 +13,22 @@ require_once 'common.php'
        </h1>
        <p>read books</p>
    </div>
+</section>
+
+
+<section class="landin-carousel">
+    <div class="container">
+        <div class="section-title">
+            <p>Latest books</p>
+        </div>
+    <div class="product-slider owl-carousel owl-loaded owl-drag">
+        <div class="owl-stage-outer">
+            <div class="owl-stage">
+                <?php carouselBooks()?>
+            </div>
+        </div>
+    </div>
+    </div>
 </section>
 
 
@@ -62,6 +79,7 @@ require_once 'common.php'
 <?php
 displayModal()
 ?>
+<script src="owlcarousel/owl.carousel.min.js"></script>
 <script src="main.js"></script>
 <script src="query.js"></script>
 <script src="dist/js/bootstrap.bundle.min.js"></script>

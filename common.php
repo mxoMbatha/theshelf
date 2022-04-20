@@ -4,27 +4,30 @@ echo <<<_END
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 <head>
- <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link  href="styles.css " rel="stylesheet">
       <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/flaticon.css">
       <script src='jquery-3.6.0.min.js'>
       </script>
-      <script src="jquery.nicescroll.js"></script>
+
+      
 </head>
 _END;
 require_once 'sessions.php';
 if($loggedin)
 echo <<<_END
-<nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark">
- <div class="container-fluid">
- <a class="logo " href="index.php">$appname</a>
+<nav class="navbar navbar-expand-lg   navbar-fixed-top navbar-dark">
+  <div class="container-fluid">
+    <a class="logo " href="index.php">$appname</a>
 
 
- <div class="collapse navbar-collapse justify-content-center" id="navmenu">
- <ul class="navbar-nav">
-     <li class="nav-item">
+  <div class="collapse navbar-collapse justify-content-center" id="navmenu">
+    <ul class="navbar-nav">
+      <li class="nav-item">
      <a class="nav-link" href="books.php">elibrary</a>
       </li>
      <li class="nav-item">
