@@ -30,7 +30,30 @@ require_once 'sessions.php'
            else{
                $_SESSION['uzer']=$uzer;
                $_SESSION['pass']=$pass;
-               die ("<h2>Welcome  To  $appname " .''. " $uzer</h2> ". "<br>"."<a href='account.php'>continue with your profile</a>" );
+               header('location:index.php');
+               die ("
+               <div class='main'>
+      <div class='confirmation-php'>
+
+      <h3 class=top-heading >welcome to $appname  $uzer</h3>
+        <p class='successful'>you've been succesfully logged in</p>
+       <br>
+       <div class= 'centre-content'>
+        
+       <div class='centre-links in'>
+        <p class='continue'>
+        <a href='account.php' id='continue'>account set-up</a>
+        </p>
+        <p class='backTo'>
+        <a href='Index.php' id='skip'>home<a/>
+        </p>
+        <p class='toBooks'>
+        <a href='books.php' id='toBooks'>books</a>
+        </p>
+         </div>
+         </div>
+         </div>
+      </div>" );
            }
        }
    }
@@ -56,6 +79,47 @@ _END;
 </div>
 </div>
 </main>
+<footer class=" py-3 p-5 position-relative" >
+<div class="container-xl">
+<div class="row mb-3">
+    <div class="col-md-8 themed-grid-col">
+
+       <div class="pb-3 social">
+            <h3>Connect with <?php echo "<a class='logolink' href='index.php'> $appname </a>"?></h3>
+        <ul>
+          <li><a href="#email">email</a></li>
+          <li><a href="#facebook">facebook</a></li>
+          <li><a href="#instagram">instagram</a></li>
+          <li><a href="#twitter">twitter</a></li>
+        </ul> 
+        </div>
+    <div class="row">
+          
+
+            <div class="col-md-6 themed-grid-col foot">
+            <p>Copyright &copy; <span id="yearnow"></span>
+             <span><a class='logolink' href="index.php"><?php echo $appname ?></a> </span>
+                All Right Reserved.  |  
+             <span> <a href="Trems">Terms & Conditions</a> |  <a href="Privacy"> Privacy</a></span> </p>
+            </div>
+    </div>
+</div>
+     <div class="col-md-4 themed-grid-column  left-footer"> 
+        <div class="logo"><h4><a  class='logolink' href="index.php"><?php echo $appname ?></a></h4></div>
+        <p>Read books</p>
+               <div class="links">
+      <ul >
+          <li><a class="" href="#eLibrary">eLibrary</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#support">Support</a></li>
+          <li><a href="#contact">Contact</a></li>
+      </ul>
+        </div>
+    </div>   
+</div>
+</div>
+</div>
+</footer>
 
 
 

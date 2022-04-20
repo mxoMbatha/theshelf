@@ -19,42 +19,7 @@ echo <<<_END
  <div class="container-fluid">
  <a class="logo " href="index.php">$appname</a>
 
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
-
- <div class="collapse navbar-collapse justify-content-center" id="navmenu">
- <ul class="navbar-nav">
-     <li class="nav-item">
-     <a class="nav-link" href="books.php">library</a>
-      </li>
-     <li class="nav-item">
-     <a class="nav-link" href="#Shop">shop</a></li>
-     <li class="nav-item"> 
-     <a class="nav-link" href="#community">community</a></li>
-     <li class="nav-item">
-     <a class="nav-link" href="account.php">$userString</a>
-     </li>
-      <li class="nav-item">
-     <a class="nav-link" href="logout.php">logout</a>
-     </li>
-    
- </ul>
-</div>
-    </div>
-  </nav>
- 
-_END;
-else
-echo <<<_END
-<nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark">
- <div class="container-fluid">
- <a class="logo " href="index.php">$appname</a>
-
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
  <div class="collapse navbar-collapse justify-content-center" id="navmenu">
  <ul class="navbar-nav">
      <li class="nav-item">
@@ -66,18 +31,63 @@ echo <<<_END
      <a class="nav-link" href="#community">community</a></li> 
      </ul>
      </div>
-     <div class="collapse collapse navbar-collapse right-content" id="navmenu">
-     <ul class="navbar-nav">
+     <div class=" right-content" >
+     <ul class="navbar-nav signs-right">
      <li class="nav-item">
-     <a class="nav-link" href="signUp.php">signup</a>
+     <a class="nav-link signs" href="account.php">$userString</a>
      </li>
       <li class="nav-item">
-     <a class="nav-link" href="login.php">login</a>
+          <a class="nav-link signs" >
+            <button type="button" class="button-signout" data-bs-toggle="modal" data-bs-target="#staticBackdropLive">logout
+            </button>
+          </a>
      </li>
      </ul>
-
  
     </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
   </nav>
+ 
+_END;
+else
+echo <<<_END
+<nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark">
+ <div class="container-fluid">
+ <a class="logo " href="index.php">$appname</a>
+
+
+ <div class="collapse navbar-collapse justify-content-center" id="navmenu">
+ <ul class="navbar-nav">
+     <li class="nav-item">
+     <a class="nav-link" href="books.php">elibrary</a>
+      </li>
+     <li class="nav-item">
+     <a class="nav-link" href="#Shop">shop</a></li>
+     <li class="nav-item"> 
+     <a class="nav-link" href="#community">community</a></li> 
+     </ul>
+     </div>
+     <div class=" right-content" >
+     <ul class="navbar-nav signs-right">
+    
+     <li class="nav-item">
+     <a class="nav-link signs" href="signUp.php">signup</a>
+     </li>
+      <li class="nav-item">
+     <a class="nav-link signs" href="login.php">login</a>
+     </li>
+     </ul>
+ 
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  
 _END;
 ?>

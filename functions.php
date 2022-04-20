@@ -23,13 +23,13 @@ function destroySession(){
     if (session_id()!="" || isset($_COOKIE[session_name
     ()]))
     setcookie(session_name(), '' ,time()-2592000,'/');
-    session_destroy();
+    session_destroy();                                                
 }
 function sanitizeString($var){
     global $conn;
     $var=strip_tags($var);
     $var=htmlentities($var);
-    $var=stripslashes($var);
+    $var=stripslashes($var);                
     return $conn->real_escape_string($var);
 }
 function showProfile($uzer){
@@ -70,11 +70,37 @@ echo "<p>";echo stripslashes($data['released']);echo"</p>"."<div class='cart-but
 function logOut(){
     if (isset($_SESSION['uzer'])){
         destroySession();
-        echo "You have been logged out. Please " .
-"<a href='index.php'>click here</a> to refresh the screen.";
+        
+        echo "<p class='out'>You have been logged out. Please 
+<a href='index.php'>click here</a> to refresh the screen.</p>";
 }
 else 
-echo "<div class='main'><br>" .
+echo "
+<div class='main'><br>" .
 "You cannot log out because you are not logged in";
+}
+
+function displayModal(){
+    echo <<<_END
+        <div class="modal fade" id="staticBackdropLive" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLiveLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                       <h5 class="modal-title text-align-center" id="staticBackdropLiveLabel">Logout</h5>
+                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                       <p class='text-align-center modal-p'>Are you sure you wanna logout ?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn button-out">
+                            <a class="color-white" href="logout.php">Logout</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    _END;
 }
  ?>

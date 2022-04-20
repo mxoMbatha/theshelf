@@ -21,7 +21,7 @@ $('#webdevBooks').click(function (e)
 })
 $('#fiction').click(function (e)
 {
-    e.preventDefault();
+
     $.get('fiction.php', function (data)
     {
         $('#display-books').html(data);

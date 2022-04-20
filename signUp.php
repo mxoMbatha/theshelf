@@ -32,20 +32,25 @@ else {
     $error="<p class='error-feedback'>username already exist</p> <br>";
 
 else{
-      queryMysql("INSERT INTO uzers VALUES('$uzer','$email','$pass')");die
-      ("<div><h3 class=top-heading >Welcome to $appname </h3>
-       <h5>your account is succesfully created <a href='#' id='sign-again'> click here to sign in<a/> </h5>  <br>
-      </div>
-      <div id='letIn'>
-      <script>
-     $('#sign-again').click(function (e) {
-    e.preventDefault();
-    $.get('login.php', function (data) {
-        $('#letIn').html(data);
-    })
-    $('#letIn').fadeTo('slow');
-})
-      </script>
+
+    $result=queryMysql("INSERT INTO uzers VALUES('$uzer','$email','$pass')");
+    if ($result)
+       die
+      ("
+      <div class='main'>
+      <div class='confirmation-php'>
+
+      <h3 class=top-heading >welcome to $appname  $uzer</h3>
+        <p class='successful'>your account is succesfully created</p>
+       <br>
+       <div class= 'centre-content'>
+       
+       <div class='centre-links'>
+       
+        <p class='backTo'> <a href='login.php' id='skip'>back to login<a/> </p>
+         </div>
+         </div>
+         </div>
       </div>")
       ;
      }
@@ -62,7 +67,11 @@ echo <<<_END
 <span id="feedback"></span>
 <input type="text" maxlegnth="16" placeholder="Email" name="email" value="$email">
 <input type="password" maxlegnth='16' name="pass" value="$pass" placeholder="Password">
+<input type="password" maxlegnth='16' name="pass" value="" id="re-pass" placeholder="confirm-password">
+<p><input type="checkbox" name="remember" id="remembered"><a href="terms.html"> Accept Terms & Conditions</a></p>
 <input class="login-button" type="submit" name="sigup" value="Sign Up" >
+</a>
+<a class="link-up link-in"  href="login.php ">Already have account? sign in </a>
 </form>
 _END
 ?>
@@ -117,10 +126,13 @@ _END
 </div>
 </div>
 </footer>
+<?php
+displayModal()
+?>
 
 
 
-
+<script src="dist/js/bootstrap.bundle.min.js"></script>
 <script src="main.js"></script>
 <script src="query.js"></script>
 </body>

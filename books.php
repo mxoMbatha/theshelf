@@ -8,9 +8,9 @@ require_once 'common.php';
 <main class="allbooks-main">
 <h1 style="text-align:center">eLibrary</h1>
 <div class="booksmain">
-<aside class="bd-aside border-left" ">
+<aside class="bd-aside border-left" >
    <div class="flex-shrink-0 p-3 ">
-   <p class="d-flex align-items-centre mb-3 pb-3 border-bottom">|Filter|</p>
+   <p class="filter d-flex align-items-centre mb-3 pb-3 border-bottom">|Filter|</p>
    <ul class="list-unstyled ps-0">
      <li class="mb-1">
      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#new-collapse" aria-expanded="false">
@@ -28,9 +28,9 @@ require_once 'common.php';
         </button>
         <div class="collapse show" id="category-collapse" style="">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#"  class="link-dark rounded" id="fiction" >Fiction</a></li>
-            <li><a href="#" id="webdevBooks" class="link-dark rounded">Web Development</a></li>
-            <li><a href="#" id="biography" class="link-dark rounded">biography</a></li>
+            <li><a href="#display-books"  class="link-dark rounded" id="fiction" >Fiction</a></li>
+            <li><a href="#display-books" id="webdevBooks" class="link-dark rounded">Web Development</a></li>
+            <li><a href="#display-books" id="biography" class="link-dark rounded">biography</a></li>
           </ul>
         </div>
       </li>
@@ -105,6 +105,9 @@ require_once 'common.php';
 </div>
 </div>
 </div>
+<?php
+displayModal()
+?>
 </footer>
 <script src="dist/js/bootstrap.bundle.min.js"></script>
 <script src="main.js"></script>

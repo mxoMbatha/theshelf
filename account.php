@@ -149,6 +149,9 @@ _END;
 </div>
 </div>
 </footer>
+<?php
+displayModal()
+?>
 <script src="dist/js/bootstrap.bundle.min.js"></script>
 <script src="main.js"></script>
  </body>
